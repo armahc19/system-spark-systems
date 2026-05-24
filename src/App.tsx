@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -17,39 +16,6 @@ import {
 import logo from "@/assets/scriptgad-logo.png";
 
 const WHATSAPP_URL = "https://wa.me/your-number";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "ScriptGad — Websites, Facebook Ads & Lead Systems" },
-      {
-        name: "description",
-        content:
-          "ScriptGad builds websites, runs Facebook ads, and creates automation systems that turn your business into a customer-generating machine.",
-      },
-      { property: "og:title", content: "ScriptGad — Customer-Generating Systems" },
-      {
-        property: "og:description",
-        content:
-          "Websites, Facebook ads, and lead automation built for real business growth.",
-      },
-      { property: "og:type", content: "website" },
-    ],
-    links: [
-      { rel: "canonical", href: "/" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
-      },
-      {
-      rel: "icon",
-      type: "image/png",
-      href: logo,
-    },
-    ],
-  }),
-  component: Landing,
-});
 
 function Nav() {
   return (
@@ -391,7 +357,7 @@ function Footer() {
   );
 }
 
-function Landing() {
+export default function App() {
   return (
     <div className="min-h-screen">
       <Nav />
