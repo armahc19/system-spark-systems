@@ -1,4 +1,4 @@
-FROM node:20 as build
+FROM node:20
 
 WORKDIR /app
 
@@ -8,10 +8,6 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-FROM nginx:alpine
+EXPOSE 3030
 
-COPY --from=build /app/dist/client /usr/share/nginx/html
-
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 80
+CMD ["node", "dist/server/index.js"]
